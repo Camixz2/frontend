@@ -8,8 +8,8 @@ export default function Livros() {
 
     const fetch = async () => {
         try {
-            const res = await axios.get('/api/livros');  // Confirme que essa URL é a correta
-            console.log(res.data);  // Adicione esse log para verificar os dados
+            const res = await axios.get('/api/livros');  
+            console.log(res.data);  
             setLivros(res.data);
         } catch (err) {
             console.error("Erro ao buscar livros:", err);
@@ -17,13 +17,13 @@ export default function Livros() {
     };
 
     useEffect(() => {
-        fetch();  // Chama o fetch assim que o componente for montado
-    }, []);  // O segundo argumento vazio significa que o efeito será executado apenas uma vez (na montagem)
+        fetch(); 
+    }, []); 
 
     const handleDelete = async (id) => {
         if (!confirm('Excluir?')) return;
         await axios.delete(`/api/livros/${id}`);
-        fetch();  // Atualiza a lista após a exclusão
+        fetch();  
     };
 
     return (

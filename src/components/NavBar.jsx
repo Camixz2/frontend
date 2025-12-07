@@ -5,10 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function NavBar(){
   const navigate = useNavigate();
-  const token = localStorage.getItem('token');  // Pode manter esse código para verificar se o usuário está logado
-
+  const token = localStorage.getItem('token'); 
   const logout = () => {
-    // Remova a lógica de logout relacionada ao token JWT
+
     localStorage.removeItem('token');
     navigate('/login');
   };

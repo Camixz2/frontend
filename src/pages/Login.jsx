@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await axios.post('/auth/login', { email, senha });
-      navigate('/livros');  // Redireciona para a página de livros após login bem-sucedido
+      navigate('/livros'); 
     } catch (err) {
       alert('Erro ao fazer login');
     }
